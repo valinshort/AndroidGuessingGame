@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GuessingGame</string>
+    <string name="directions">choose a number 1 through 100 you have five chances to guess the number Good Luck.</string>
 </resources>
