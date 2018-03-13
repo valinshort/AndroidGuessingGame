@@ -1,5 +1,6 @@
 package com.example.valindelsignore.guessinggame;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -16,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void startMenu(){
-        Intent playGame = new Intent(this,class);
-
+    private void startGame(){
+        Intent playGame = new Intent(this,GameActivity.class);
+        startActivity(playGame);
     }
 }
 
