@@ -22,6 +22,7 @@ public class GameActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         generatedNumber = (int) Math.ceil(Math.random() * 100);
+
     }
 
     @Override
@@ -32,19 +33,25 @@ public class GameActivity extends AppCompatActivity {
         clueTextView = findViewById(R.id.clue_textview);
         guessButton = findViewById(R.id.submit_guess_button);
 
-
         setListener();
-
     }
 
 
+
+
+
+
+
+
+
     private void setListener() {
+
         guessButton.setOnClickListener(new View.OnClickListener())
         @Override
         public void onClick(View v){
             int userGuess = Integer.parseInt(guess.getText().toString();
            if (userGuess > 100){
-               clueTextView.setText("Enter a number between 1 - 100");
+               clueTextView.setText(R.string.invalid_number_error_message);
                clueTextView.setVisibility(View.VISIBLE);
                guess.setText("");
         } else{
@@ -55,7 +62,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
-    private void chedkGuess(int userGuess) {
+    private void checkGuess(int userGuess) {
         if (userGuess == generatedNumber) {
            // System.out.println("That was the correct number do you want to play again?");
             // TODO - create Intent to go to winning activity- handle winning
@@ -65,22 +72,22 @@ public class GameActivity extends AppCompatActivity {
             // TODO - create Intent to go to winning activity- handle out of chances
         } else if (numberOfguesses == 3 && userGuess > generatedNumber) {
             //System.out.println("Your number is too high and It's your last guess good luck!");
-            clueTextView.setText("higher");
+            clueTextView.setText(R.string.higher);
             clueTextView.setVisibility(View.VISIBLE);
             guess.setText("");
         } else if (numberOfguesses == 4) {
             //System.out.println("your out of guesses the answer was " + generatedNumber + " would you like to try again? yes//no ?" +
                    // "");
-            clueTextView.setText("higher");
+            clueTextView.setText(R.string.higher);
             clueTextView.setVisibility(View.VISIBLE);
             guess.setText("");
         } else if (userGuess > generatedNumber && numberOfguesses != 3 && numberOfguesses != 4) {
-            clueTextView.setText("lower");
+            clueTextView.setText(R.string.lower);
             clueTextView.setVisibility(View.VISIBLE);
             guess.setText("");
         } else if (userGuess < generatedNumber && numberOfguesses != 3 && numberOfguesses != 4) {
             System.out.println("your number is too low,try again ! ");
-            clueTextView.setText("lower");
+            clueTextView.setText(R.string.lower);
             clueTextView.setVisibility(View.VISIBLE);
             guess.setText("");
 
