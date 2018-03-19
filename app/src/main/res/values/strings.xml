@@ -6,4 +6,6 @@
     <string name="higher2">higher</string>
     <string name="lower">lower</string>
     <string name="lower2">lower</string>
+    <string name="you_lost">ypu lost</string>
+    <string name="winning_number">the winning number was %1$d</string>
 </resources>
